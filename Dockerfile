@@ -28,6 +28,6 @@ RUN PACKAGES="wget libswitch-perl" \
         && apt-get autoremove --purge -qq \
         && rm -rf /var/lib/apt/lists/*
 
-
+COPY template.tex /media/
 COPY --from=build /go/bin/grafana-reporter /usr/local/bin
 ENTRYPOINT [ "/usr/local/bin/grafana-reporter" ]
