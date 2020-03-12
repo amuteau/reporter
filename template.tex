@@ -1,0 +1,25 @@
+%use square brackets as golang text templating delimiters
+\documentclass[10pt,a4paper]{article}
+\usepackage{pdflscape}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\geometry{hmargin=0.5cm,vmargin=0cm}
+\graphicspath{ {images/} }
+\begin{document}
+\begin{landscape}
+%\title{[[.Title]] [[if .VariableValues]] \\ \large [[.VariableValues]] [[end]] [[if .Description]] \\ \small [[.Description]] [[end]]}
+%\date{[[.FromFormatted]]\\to\\[[.ToFormatted]]}
+%\maketitle
+\begin{center}
+[[range .Panels]][[if .IsSingleStat]]\begin{minipage}{0.3\textwidth}
+\includegraphics[width=\textwidth]{image[[.Id]]}
+\end{minipage}
+[[else]]\par
+\hspace{0cm}
+\includegraphics[width=27cm]{image[[.Id]]}
+\par
+\hspace{0cm}
+[[end]][[end]]
+\end{center}
+\end{landscape}
+\end{document}
