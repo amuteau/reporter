@@ -22,7 +22,7 @@ RUN PACKAGES="wget libswitch-perl" \
         && chown -R root:staff /opt/TinyTeX \
         && chmod -R g+w /opt/TinyTeX \
         && chmod -R g+wx /opt/TinyTeX/bin \
-        && tlmgr install epstopdf-pkg \
+        && tlmgr install epstopdf-pkg pdflscape \
         # Cleanup
         && apt-get remove --purge -qq $PACKAGES \
         && apt-get autoremove --purge -qq \
