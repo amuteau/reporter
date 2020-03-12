@@ -1,7 +1,7 @@
 # build
 FROM golang:1.8-stretch AS build
 WORKDIR /go/src/${owner:-github.com/IzakMarais}/reporter
-RUN apt-get update && apt-get -y install make git
+RUN apt-get update && apt-get -y install make git vim
 ADD . .
 RUN make build
 
